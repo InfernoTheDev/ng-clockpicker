@@ -3,10 +3,10 @@ import { ClockPickerConfig } from '../interfaces';
 const fullHours: number[] =
   Array(24)
     .fill(0, 0, 24)
-    .map((_, i, a) => i === a.length - 1 ? 0 : i + 1)
+    .map((_, i, a) => i === a.length - 1 ? 0 : i + 1);
 
 export const hours = {
-  '24h': fullHours.slice(12, 24),
+  '24h': fullHours,
   '12h': fullHours.slice(0, 12),
 };
 
@@ -20,7 +20,7 @@ export const defaultConfig: ClockPickerConfig = {
   buttonCancel: 'Cancel',
   initialValue: '12:00',
   closeOnOverlayClick: false,
-  is24: false,
+  is24: true,
 };
 
 export const MODE_MINUTES = 'minutes';
@@ -34,5 +34,5 @@ export const defaults = {
   hours: 12,
   minutes: 0,
   scope: HOURS_SCOPE_12,
-  is24: false,
+  is24: true,
 };

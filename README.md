@@ -1,3 +1,7 @@
+### Notice !!
+
+This is a custom version to use it on my own. 
+
 ### ng-clock-picker
 
 [![CircleCI](https://circleci.com/gh/jedrzejiwanicki/ng-clockpicker/tree/master.svg?style=svg)](https://circleci.com/gh/jedrzejiwanicki/ng-clockpicker/tree/master)
@@ -93,6 +97,9 @@ export class AppComponent {
 ```
 
 ### Config:
+
+The option "is24" will not work on this repo
+
 ```typescript
 export interface ClockPickerConfig {
   wrapperClassName?: string;

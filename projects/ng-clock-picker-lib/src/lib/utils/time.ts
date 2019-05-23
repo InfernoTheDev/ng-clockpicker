@@ -25,7 +25,7 @@ export function determineScope(hour: number): string {
 }
 
 export function getDisplayTime(
-  hours: number,
+  hours: number, 
   minutes: number,
   mode: HoursMode,
   is24: boolean,

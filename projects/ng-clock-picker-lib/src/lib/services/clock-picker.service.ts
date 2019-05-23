@@ -11,6 +11,10 @@ export class ClockPickerService {
   _time: Time;
 
   init(): void {
+
+    // TODO: For hard code to TRUE for the clock is only show 24 clock
+    this.config.is24 = true;
+
     const { initialValue, is24 } = this.config;
     this._time = new Time(<TimeConfig>{ ...parseTimeString(initialValue), is24 });
   }

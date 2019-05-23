@@ -1,5 +1,9 @@
 <section>
-  <img src="assets/icon.svg" alt="">
+  <img 
+    (click)="this.showModal()"
+    ngClockPicker 
+    [ngClockPickerConfig]="configB"
+    src="assets/icon.svg" alt="">
   <h1>NgClockPicker</h1>
   <form [formGroup]="form">
     <input

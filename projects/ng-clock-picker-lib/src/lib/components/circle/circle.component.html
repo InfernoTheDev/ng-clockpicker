@@ -3,7 +3,7 @@
   class="clock-picker__circle"
   [ngClass]="{
     'clock-picker__circle--minutes': clockPickerService.Time.Mode.isModeMinutes,
-    'clock-picker__circle--hours': clockPickerService.Time.Mode.isModeHours
+    'clock-picker__circle--hours24c': clockPickerService.Time.Mode.isModeHours
   }">
   <ng-clock-face></ng-clock-face>
   <ng-circle-button
