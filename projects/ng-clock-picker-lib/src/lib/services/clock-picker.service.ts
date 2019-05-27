@@ -12,10 +12,13 @@ export class ClockPickerService {
 
   init(): void {
 
-    // TODO: For hard code to TRUE for the clock is only show 24 clock
+    // TODO: Static 24 hours value
     this.config.is24 = true;
-
+    
     const { initialValue, is24 } = this.config;
+
+    console.log('ClockPickerService this.config', this.config);
+
     this._time = new Time(<TimeConfig>{ ...parseTimeString(initialValue), is24 });
   }
 

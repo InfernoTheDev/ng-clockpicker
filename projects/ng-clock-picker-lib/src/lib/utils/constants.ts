@@ -29,10 +29,13 @@ export const HOURS_MODE_AM = 'AM';
 export const HOURS_MODE_PM = 'PM';
 export const HOURS_SCOPE_24 = '24h';
 export const HOURS_SCOPE_12 = '12h';
+export const FORMAT_12 = 'hour12';
+export const FORMAT_24 = 'hour24';
 
 export const defaults = {
-  hours: 12,
+  hours: 0,
   minutes: 0,
-  scope: HOURS_SCOPE_12,
+  scope: HOURS_SCOPE_24,
   is24: true,
+  format: null // FORMAT_12 or FORMAT_12
 };
