@@ -1,7 +1,7 @@
 {
   "name": "ng-clock-picker-lib-voova",
   "description": "This is a customize version from the original https://jedrzejiwanicki.github.io/ng-clockpicker, Original function will not work the same",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "license": "MIT",
   "keywords": ["angular", "time", "picker", "time-picker", "clock", "clock-picker", "voova"],
   "homepage": "https://github.com/InfernoTheDev/ng-clockpicker",
