@@ -9,8 +9,8 @@ import { ClockPickerDialogService, ClockPickerConfig } from 'ng-clock-picker-lib
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
-  configA: ClockPickerConfig = { wrapperClassName: 'my-class-name', closeOnOverlayClick: true };
-  configB: ClockPickerConfig = { ...this.configA, is24: true };
+  configA: ClockPickerConfig = { wrapperClassName: 'my-class-name', closeOnOverlayClick: true,  is24: false };
+  configB: ClockPickerConfig = { wrapperClassName: 'my-class-name', closeOnOverlayClick: true,  is24: true };
 
   form: FormGroup = this.formBuilder.group({ time: [''] });
 

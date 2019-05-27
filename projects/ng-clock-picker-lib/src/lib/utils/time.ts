@@ -25,6 +25,7 @@ export function determineScope(hour: number): string {
 }
 
 export function getDisplayTime(
+  // tslint:disable-next-line:no-shadowed-variable
   hours: number, 
   minutes: number,
   mode: HoursMode,

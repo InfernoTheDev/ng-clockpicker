@@ -1,10 +1,12 @@
 <section>
   <img 
     (click)="this.showModal()"
-    ngClockPicker 
-    [ngClockPickerConfig]="configB"
     src="assets/icon.svg" alt="">
   <h1>NgClockPicker</h1>
+  <div
+      (click)="this.showModal()"
+      placeholder="24h"
+    >test</div>
   <form [formGroup]="form">
     <input
       formControlName="time"
