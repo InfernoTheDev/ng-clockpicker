@@ -22,7 +22,6 @@ This is a custom version to use it on my own.
 
 <br><br>
 # Original Docs
----
 ### ng-clock-picker
 
 [![CircleCI](https://circleci.com/gh/jedrzejiwanicki/ng-clockpicker/tree/master.svg?style=svg)](https://circleci.com/gh/jedrzejiwanicki/ng-clockpicker/tree/master)
