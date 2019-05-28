@@ -1,5 +1,6 @@
 {
   "name": "ng-clock-picker-lib-app",
+  "description": "This is a customize version from the original https://jedrzejiwanicki.github.io/ng-clockpicker, Original function will not work the same",
   "version": "0.0.3",
   "scripts": {
     "ng": "ng",

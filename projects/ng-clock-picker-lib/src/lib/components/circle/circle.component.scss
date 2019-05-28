@@ -27,6 +27,10 @@
   &--hours {
     @include on-circle(12, 220px, 50px, -60);
   }
+
+  &--hours24c {
+    @include on-circle24Hour(24, 220px, 50px, -60);
+  }
 }
 
 

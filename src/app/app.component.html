@@ -1,18 +1,24 @@
 <section>
-  <img src="assets/icon.svg" alt="">
+  <img 
+    (click)="this.showModal()"
+    src="assets/icon.svg" alt="">
   <h1>NgClockPicker</h1>
+  <div
+      (click)="this.showModal()"
+      placeholder="24h"
+    >test</div>
   <form [formGroup]="form">
     <input
       formControlName="time"
       placeholder="Pick time: 24h"
       ngClockPicker
-      [ngClockPickerConfig]="configB"
+      [ngClockPickerConfig]="config"
     />
     <input
       formControlName="time"
       placeholder="Pick time: AM/PM"
       ngClockPicker
-      [ngClockPickerConfig]="configA"
+      [ngClockPickerConfig]="config"
     />
   </form>
 </section>

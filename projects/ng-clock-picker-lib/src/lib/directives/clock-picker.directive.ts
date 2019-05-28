@@ -26,6 +26,9 @@ export class ClockPickerDirective extends AbstractValueAccessor implements OnIni
     event.preventDefault();
     this.elementRef.nativeElement.blur();
 
+    // TODO: Static 24 hours value
+    this.ngClockPickerConfig.is24 = true;
+
     this.clockPickerDialogService
       .showClockPickerDialog({ initialValue, ...this.ngClockPickerConfig })
       .subscribe((data: string) => {

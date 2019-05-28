@@ -1,10 +1,11 @@
 {
-  "name": "ng-clock-picker-lib",
-  "version": "1.2.2",
+  "name": "ng-clock-picker-lib-voova",
+  "description": "This is a customize version from the original https://jedrzejiwanicki.github.io/ng-clockpicker, Original function will not work the same",
+  "version": "1.3.0",
   "license": "MIT",
-  "keywords": ["angular", "time", "picker", "time-picker", "clock", "clock-picker"],
-  "homepage": "https://jedrzejiwanicki.github.io/ng-clockpicker/",
-  "repository": "https://github.com/jedrzejiwanicki/ng-clockpicker",
+  "keywords": ["angular", "time", "picker", "time-picker", "clock", "clock-picker", "voova"],
+  "homepage": "https://github.com/InfernoTheDev/ng-clockpicker",
+  "repository": "https://github.com/InfernoTheDev/ng-clockpicker",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
     "@angular/core": "^7.0.0"

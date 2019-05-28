@@ -1,4 +1,4 @@
-import { defaults, hours } from './constants';
+import { defaults, hours, FORMAT_24 } from './constants';
 import { HoursMode } from '../classes/HoursMode';
 
 export function convertToTimeFormat(value: number): string {
@@ -25,16 +25,26 @@ export function determineScope(hour: number): string {
 }
 
 export function getDisplayTime(
-  hours: number,
+  // tslint:disable-next-line:no-shadowed-variable
+  hours: number, 
   minutes: number,
   mode: HoursMode,
   is24: boolean,
+  format?: string
 ): string {
 
-  const date = new Date();
+  console.log('getDisplayTime hours: ', hours);
+  console.log('getDisplayTime minutes: ', minutes);
+  console.log('getDisplayTime mode: ', mode);
+  console.log('getDisplayTime is24: ', is24);
+  console.log('getDisplayTime format: ', format);
 
+  const date = new Date();
   date.setHours((mode.isHoursModePM && !is24)  ? hours + 12 : hours);
   date.setMinutes(minutes);
 
-  return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+  return format === FORMAT_24 
+  ? date.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit' })
+  : date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 }

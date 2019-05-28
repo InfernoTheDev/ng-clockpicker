@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ClockPickerService } from '../../services/clock-picker.service';
 import { hoursModeSlide } from '../../animations/hours-mode-slide';
 import { HOURS_MODE_AM, HOURS_MODE_PM, HOURS_SCOPE_24, HOURS_SCOPE_12 } from '../../utils/constants';
