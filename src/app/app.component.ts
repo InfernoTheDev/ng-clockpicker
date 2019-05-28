@@ -9,8 +9,7 @@ import { ClockPickerDialogService, ClockPickerConfig } from 'ng-clock-picker-lib
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
-  configA: ClockPickerConfig = { wrapperClassName: 'my-class-name', closeOnOverlayClick: true,  is24: false };
-  configB: ClockPickerConfig = { wrapperClassName: 'my-class-name', closeOnOverlayClick: true,  is24: true };
+  config: ClockPickerConfig = { wrapperClassName: 'my-class-name', closeOnOverlayClick: true,  is24: true, format: 'hour12' };
 
   form: FormGroup = this.formBuilder.group({ time: [''] });
 
@@ -30,13 +29,13 @@ export class AppComponent implements OnInit {
     console.log('show modal');
     console.log('this.clockPickerDialogService', this.clockPickerDialogService);
     this.clockPickerDialogService
-    .showClockPickerDialog(this.configB)
+    .showClockPickerDialog(this.config)
     .subscribe(
       (time: string) => {
-        console.log(time)
+        console.log(time);
       },
       (error) => console.log('error', error)
-    )
+    );
   }
 
 }

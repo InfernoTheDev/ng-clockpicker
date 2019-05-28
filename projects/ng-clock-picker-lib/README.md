@@ -1,17 +1,73 @@
+
+
 <p align="center">
-  <img src="https://lh3.google.com/u/0/d/16b6aJtJeu3FzPku2p7K1nZeqmogONUwX=w1920-h944-iv2">
+  <img src="https://lh3.googleusercontent.com/fWa0fhHGVT4ltgpB96VE3uh1GEkFWMwN5Et7YF5yVI45U5RGYbFQIbpeydvEe5X7kiA_3tAMeNfRHbkkgJVPg3ERBB9UBfnq_MqtMqkF512zXBT_KtXfDCxWx7gmnBhegHXLZNHpO0Pc4sjCInFqYptKfrey3YjHqiYFPdLktXSlPc5eakvnwQxDBLMZ1bPbGhql9KSJyTNaJB0r98h3vi4QZKJyFTs2yu1i77axieMLq7PPty1OQ5HRd-p58wDvJKP5TiYh2v2Q1Lh1ouemSAfx0UqdZeDI-zypeEbcIzzqPA5-ga5SmRNn0FDNhZ6TUgQOpzAM6fz-z7YIXgXqYHQPDterLSatbgIyCgeGTKTfqeU9k5OTr2yJ5gJbGp0ti7bRcOUMRAYYtsImnzfwEqUBOp-k4ptSi75C5sT-XSFD1yKVOyyPccJ56_oRPbz4y3e5T-Cc4SQtRoRgAjymLpV_cQRH0SRDeOZ-EChafgn_kcjaImwV70QYeN-jTP58Wk_s5jGSBMvFExolyndML3KoPbXWJzcsHQ10a4kjVots2NUfweGAuwocPDQPyvgtDL5VozhakidmrH6MgWD89q2rLkOknmuZK4xdPQo=w1920-h944">
 </p>
 
 # Notice !!
 
 This is a custom version to use it on my own. 
 
+
+## Install
+
+`npm i ng-clock-picker-lib-voova --save`
+
 ## Usage
-- Please use it as "By injecting service straight into component"
+- Please use it as "By injecting service straight into component" you can see in the bottom of this README file
 - Normal behavior from original will not work
 
----
+#### By injecting service straight into component:
 
+```typescript
+import { Component, ViewContainerRef } from '@angular/core';
+import { ClockPickerDialogService, ClockPickerConfig } from 'ng-clock-picker-lib';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+  config: ClockPickerConfig = { 
+    wrapperClassName: 'className', 
+    closeOnOverlayClick: true 
+  };
+  
+  constructor(private vcr: ViewContainerRef, private clockPickerDialogService: ClockPickerDialogService) {}
+  
+
+  ngOnInit(): void {
+    this.clockPickerDialogService.registerViewContainerRef(this.vcr);
+  }
+  
+  showModal(): void {
+    this.clockPickerDialogService.showClockPickerDialog(this.config).subscribe((time: string) => console.log(time))
+  }
+}
+
+```
+
+### Config:
+
+- The option "is24" will not work on this repo
+- The option "format" is "hour24" or "hour12" it will return data like "18.30" or "06.30" PM
+
+```typescript
+export interface ClockPickerConfig {
+  wrapperClassName?: string;
+  buttonCancel?: string;
+  buttonConfirm?: string;
+  closeOnOverlayClick?: boolean;
+  initialValue?: string;
+  is24?: boolean; 
+  format?: string
+}
+```
+
+
+<br><br><br><br><br><br>
+# Original Docs
 ### ng-clock-picker
 
 [![CircleCI](https://circleci.com/gh/jedrzejiwanicki/ng-clockpicker/tree/master.svg?style=svg)](https://circleci.com/gh/jedrzejiwanicki/ng-clockpicker/tree/master)

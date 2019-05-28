@@ -5,6 +5,7 @@ export interface ClockPickerConfig {
   closeOnOverlayClick?: boolean;
   is24?: boolean;
   initialValue?: string;
+  format?: string;
 }
 
 export interface SelectedTime {
@@ -17,6 +18,7 @@ export interface TimeConfig {
   minutes: number;
   is24: boolean;
   scope: string;
+  format: string;
 }
 
 export interface ClockFaceConfig {

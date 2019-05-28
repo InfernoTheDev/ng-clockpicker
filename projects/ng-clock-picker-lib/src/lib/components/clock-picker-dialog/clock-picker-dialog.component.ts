@@ -25,6 +25,10 @@ export class ClockPickerDialogComponent extends DialogComponent {
     return this.clockPickerService.Time.displayTime;
   }
 
+  get format(): string {
+    return this.clockPickerService.config.format;
+  }
+
   get config(): ClockPickerConfig {
     return this.clockPickerService.config;
   }
