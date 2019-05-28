@@ -15,11 +15,12 @@ export class ClockPickerService {
     // TODO: Static 24 hours value
     this.config.is24 = true;
     
-    const { initialValue, is24 } = this.config;
+    const { initialValue, is24, format } = this.config;
 
     console.log('ClockPickerService this.config', this.config);
+    console.log('ClockPickerService initialValue', initialValue);
 
-    this._time = new Time(<TimeConfig>{ ...parseTimeString(initialValue), is24 });
+    this._time = new Time(<TimeConfig>{ ...parseTimeString(initialValue), is24, format });
   }
 
   get Time(): Time {

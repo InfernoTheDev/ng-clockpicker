@@ -17,10 +17,56 @@ This is a custom version to use it on my own.
 - Please use it as "By injecting service straight into component" you can see in the bottom of this README file
 - Normal behavior from original will not work
 
+#### By injecting service straight into component:
+
+```typescript
+import { Component, ViewContainerRef } from '@angular/core';
+import { ClockPickerDialogService, ClockPickerConfig } from 'ng-clock-picker-lib';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+})
+export class AppComponent {
+  config: ClockPickerConfig = { 
+    wrapperClassName: 'className', 
+    closeOnOverlayClick: true 
+  };
+  
+  constructor(private vcr: ViewContainerRef, private clockPickerDialogService: ClockPickerDialogService) {}
+  
+
+  ngOnInit(): void {
+    this.clockPickerDialogService.registerViewContainerRef(this.vcr);
+  }
+  
+  showModal(): void {
+    this.clockPickerDialogService.showClockPickerDialog(this.config).subscribe((time: string) => console.log(time))
+  }
+}
+
+```
+
+### Config:
+
+- The option "is24" will not work on this repo
+- The option "format" is "hour24" or "hour12" it will return data like "18.30" or "06.30" PM
+
+```typescript
+export interface ClockPickerConfig {
+  wrapperClassName?: string;
+  buttonCancel?: string;
+  buttonConfirm?: string;
+  closeOnOverlayClick?: boolean;
+  initialValue?: string;
+  is24?: boolean; 
+  format?: string
+}
+```
 
 
-
-<br><br>
+<br><br><br><br><br><br>
 # Original Docs
 ### ng-clock-picker
 
